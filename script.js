@@ -59,7 +59,7 @@ submit.onclick = function () {
 
         // add the product if and only if when it in create mood
         if (mood === 'create') {
-            if (objProduct.count > 0 && objProduct.count<=100) {
+            if (objProduct.count > 0 && objProduct.count <= 100) {
                 for (var i = 0; i < objProduct.count; i++) {
                     arrProduct.push(objProduct);
                 }
@@ -90,7 +90,7 @@ submit.onclick = function () {
         // showing data
         showData();
         getTotal()
-    }else{
+    } else {
         swal("All fields are required", "please , fill the all felids ", "error");
     }
 
@@ -113,11 +113,12 @@ function clearData() {
 function showData() {
     // clear table before adding products
     var table = '';
+    var cards = ''
     // loop through all products
     for (var i = 0; i < arrProduct.length; i++) {
         table += `
         <tr>
-        <td>${i+1}</td>
+        <td>${i + 1}</td>
         <td>${arrProduct[i].title}</td>
         <td>${arrProduct[i].price}</td>
         <td>${arrProduct[i].taxes}</td>
@@ -128,8 +129,25 @@ function showData() {
         <td><button onclick=updateItem(${i})>Edit</button></td>
         <td><button onclick=deleteItem(${i},'${arrProduct[i].title}')>Delete</button></td>
         </tr>`
+        cards += `
+        <div id="productCard" class="card">
+                <div class="right">
+                    <p>${arrProduct[i].title}</p>
+                    <p>${arrProduct[i].Category}</p>
+                    <p>${arrProduct[i].price}</p>
+                    <button onclick=updateItem(${i})>Edit</button>
+                    <button onclick=deleteItem(${i},'${arrProduct[i].title}')>Delete</button>
+                </div>
+                <div class="left">
+                    <p>Taxes ${arrProduct[i].taxes} EGP</p>
+                    <p>ADS ${arrProduct[i].ads} EGP</p>
+                    <p>Discount ${arrProduct[i].Discount} %</p>
+                    <p>Total ${arrProduct[i].total} EGP</p>
+                </div>
+            </div>`
     }
     document.getElementById('productTable').innerHTML = table;
+    document.getElementById('productCard').innerHTML = cards;
 
     // create clear button for deleting all products
     if (arrProduct.length > 0) {

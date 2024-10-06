@@ -41,7 +41,8 @@
         <!-- table section -->
         <div class="output">
             <div class="search-group">
-                <input  onkeyup="searchItem(this.value)" type="text" placeholder="Search" id="search" aria-label="inputs">
+                <input onkeyup="searchItem(this.value)" type="text" placeholder="Search" id="search"
+                    aria-label="inputs">
                 <div class="searchBtn">
                     <button onclick="getSearchMood(this)" id="searchByTitle">Search By Title</button>
                     <button onclick="getSearchMood(this)" id="searchByCategory">Search By Category</button>
@@ -83,13 +84,29 @@
                 </table>
             </div>
         </div>
+        <!-- cards for phone screen-->
+        <div id="productCard" class="cards">
+            <!-- <div id="productCard" class="card">
+                <div class="right">
+                    <p>Product name</p>
+                    <p>Product cagegory</p>
+                    <p>Product price</p>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </div>
+                <div class="left">
+                    <p>Product taxes</p>
+                    <p>Product ads</p>
+                    <p>Product discount</p>
+                    <p>Product total</p>
+                </div>
+            </div> -->
 
-
-    </div>
-    <!-- link javascript  -->
-    <script src="script.js"></script>
-    <!-- using alert library -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        </div>
+        <!-- link javascript  -->
+        <script src="script.js"></script>
+        <!-- using alert library -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
 </html>

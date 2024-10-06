@@ -141,6 +141,65 @@ table {
     border-collapse: collapse;
 }
 
+.cards {
+    display: none;
+}
+
+@media (max-width: 892px) {
+    table {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 792px) {
+    table {
+        display: none;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cards .card {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 10px auto;
+        font: 16px;
+        width: 100%;
+        border-radius: 20px;
+        background-color: var(--primary-color);
+        padding: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .cards .card .right {
+        flex-grow: 0.2;
+    }
+
+    .cards .card p {
+        margin: 5px;
+        padding: 0;
+        font-size: 16px;
+    }
+
+    .cards .card button {
+        width: 39%;
+        display: inline-block;
+        padding: 5px;
+        font-size: 14px;
+
+
+    }
+
+    /* Show the table when the screen is less than 792px */
+
+}
+
+
 table button {
     padding: 2px;
     border: none;
