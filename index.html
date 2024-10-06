@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full product management system crud with javascript</title>
+    <!-- Link Css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="crud">
+        <!-- head section -->
+        <div class="head">
+            <h2>crud</h2>
+            <p>Product Management System</p>
+        </div>
+        <!-- form section -->
+        <div class="input">
+            <div class="title">
+                <input type="text" id="title" placeholder="Enter product name" aria-label="title">
+            </div>
+            <div class="price">
+                <input onkeyup="getTotal()" aria-label="inputs" type="number" id="price" placeholder="Enter Price">
+                <input onkeyup="getTotal()" aria-label="inputs" type="number" id="taxes" placeholder="Enter Taxes">
+                <input onkeyup="getTotal()" aria-label="inputs" type="number" id="ads" placeholder="Enter Ads">
+                <input onkeyup="getTotal()" aria-label="inputs" type="number" id="Discount"
+                    placeholder="Enter Discount % " min="0" max="100">
+                <small id="total"></small>
+            </div>
+            <input type="number" placeholder="count" id="count" aria-label="inputs" min="0">
+            <input type="text" placeholder="Category" id="category" aria-label="inputs">
+            <button id="submit">Add Product</button>
+        </div>
+        <!-- table section -->
+        <div class="output">
+            <div class="search-group">
+                <input  onkeyup="searchItem(this.value)" type="text" placeholder="Search" id="search" aria-label="inputs">
+                <div class="searchBtn">
+                    <button onclick="getSearchMood(this)" id="searchByTitle">Search By Title</button>
+                    <button onclick="getSearchMood(this)" id="searchByCategory">Search By Category</button>
+                </div>
+                <div id="clearBtn">
+                </div>
+                <!-- table -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Price</th>
+                            <th>Taxes</th>
+                            <th>Ads</th>
+                            <th>Discount</th>
+                            <th>Total</th>
+                            <th>Category</th>
+                            <th colspan="2">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productTable">
+                        <!-- Products will be added dynamically here -->
+                        <!-- Example product -->
+                        <!-- <tr>
+                            <td>1</td>
+                            <td>Product 1</td>
+                            <td>100</td>
+                            <td>5</td>
+                            <td>2</td>
+                            <td>10</td>
+                            <td>111</td>
+                            <td>Electronics</td>
+                            <td><button>Edit</button></td>
+                            <td><button>Delete</button></td>
+                        </tr> -->
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- link javascript  -->
+    <script src="script.js"></script>
+    <!-- using alert library -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+
+</html>
