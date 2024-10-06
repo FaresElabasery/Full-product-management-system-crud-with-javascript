@@ -33,7 +33,14 @@ function getTotal() {
         total.style.backgroundColor = ' var(--primary-color)';
     }
 }
-
+// validation 
+function validate() {
+    if (price.value < 0 || taxes.value < 0 || ads.value < 0) {
+        swal("Invalid Number", `it must be a positive number`, "error");
+        price.value = ''; taxes.value = ''; ads.value = ''
+    }
+    getTotal()
+}
 //Add product
 // check if product already exists
 var arrProduct;
