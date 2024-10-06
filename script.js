@@ -266,6 +266,7 @@ function getSearchMood(obj) {
 // search function
 function searchItem(value) {
     var table = ''
+    var cards = ''
     for (var i = 0; i < arrProduct.length; i++) {
         if (arrProduct[i].title.includes(value.toLowerCase()) && searchMood == 'title') {
             table += `
@@ -281,6 +282,22 @@ function searchItem(value) {
             <td><button onclick=updateItem(${i})>Edit</button></td>
             <td><button onclick=deleteItem(${i},'${arrProduct[i].title}')>Delete</button></td>
             </tr>`
+            cards += `
+            <div id="productCard" class="card">
+                    <div class="right">
+                        <p>${arrProduct[i].title}</p>
+                        <p>${arrProduct[i].Category}</p>
+                        <p>${arrProduct[i].price}</p>
+                        <button onclick=updateItem(${i})>Edit</button>
+                        <button onclick=deleteItem(${i},'${arrProduct[i].title}')>Delete</button>
+                    </div>
+                    <div class="left">
+                        <p>Taxes ${arrProduct[i].taxes} EGP</p>
+                        <p>ADS ${arrProduct[i].ads} EGP</p>
+                        <p>Discount ${arrProduct[i].Discount} %</p>
+                        <p>Total ${arrProduct[i].total} EGP</p>
+                    </div>
+                </div>`
         } else if (arrProduct[i].Category.includes(value.toLowerCase()) && searchMood == 'category') {
             table += `
             <tr>
@@ -295,8 +312,25 @@ function searchItem(value) {
             <td><button onclick=updateItem(${i})>Edit</button></td>
             <td><button onclick=deleteItem(${i},'${arrProduct[i].title}')>Delete</button></td>
             </tr>`
+            cards += `
+            <div id="productCard" class="card">
+                    <div class="right">
+                        <p>${arrProduct[i].title}</p>
+                        <p>${arrProduct[i].Category}</p>
+                        <p>${arrProduct[i].price}</p>
+                        <button onclick=updateItem(${i})>Edit</button>
+                        <button onclick=deleteItem(${i},'${arrProduct[i].title}')>Delete</button>
+                    </div>
+                    <div class="left">
+                        <p>Taxes ${arrProduct[i].taxes} EGP</p>
+                        <p>ADS ${arrProduct[i].ads} EGP</p>
+                        <p>Discount ${arrProduct[i].Discount} %</p>
+                        <p>Total ${arrProduct[i].total} EGP</p>
+                    </div>
+                </div>`
         }
         document.getElementById('productTable').innerHTML = table;
+        document.getElementById('productCard').innerHTML = cards;
     }
 
 }
