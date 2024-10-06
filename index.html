@@ -27,15 +27,24 @@
                 <input type="text" id="title" placeholder="Enter product name" aria-label="title">
             </div>
             <div class="price">
-                <input onkeyup="getTotal()" aria-label="inputs" type="number" id="price" placeholder="Enter Price">
-                <input onkeyup="getTotal()" aria-label="inputs" type="number" id="taxes" placeholder="Enter Taxes">
-                <input onkeyup="getTotal()" aria-label="inputs" type="number" id="ads" placeholder="Enter Ads">
-                <input onkeyup="getTotal()" aria-label="inputs" type="number" id="Discount"
-                    placeholder="Enter Discount % " min="0" max="100">
+                <div>
+                    <input onkeyup="getTotal()" aria-label="inputs" type="number" id="price" placeholder="Enter Price">
+                    <input onkeyup="getTotal()" aria-label="inputs" type="number" id="taxes" placeholder="Enter Taxes">
+                </div>
+                <div>
+                    <input onkeyup="getTotal()" aria-label="inputs" type="number" id="ads" placeholder="Enter Ads">
+                    <input onkeyup="getTotal()" aria-label="inputs" type="number" id="Discount"
+                        placeholder="Enter Discount % " min="0" max="100">
+                </div>
+            </div>
+            <div class="total">
+                <label for="total">Total</label>
                 <small id="total"></small>
             </div>
-            <input type="number" placeholder="count" id="count" aria-label="inputs" min="0">
-            <input type="text" placeholder="Category" id="category" aria-label="inputs">
+            <div class="grid">
+                <input type="number" placeholder="count" id="count" aria-label="inputs" min="0">
+                <input type="text" placeholder="Category" id="category" aria-label="inputs">
+            </div>
             <button id="submit">Add Product</button>
         </div>
         <!-- table section -->

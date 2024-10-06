@@ -24,17 +24,19 @@ body {
 
 /* main page */
 .crud {
-    width: 80%;
+    width: 60%;
     margin: 20px auto;
-    padding: 40px;
+    padding: 100px;
     background-color: var(--secondary-color);
     border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+
 }
 
 /* header */
 .head {
     text-align: center;
-    margin: 16px 0px;
+    margin: -60px 0px 40px;
     font-size: 24px;
     text-transform: uppercase;
 }
@@ -62,17 +64,27 @@ input:focus {
 
 @media (min-width: 768px) {
     .price {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
     }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+.total {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 #total {
     background-color: #522258;
-    padding: 4px;
+    /* padding: 4px; */
     border-radius: 4px;
     font-size: 16px;
     color: #fff;
@@ -83,10 +95,14 @@ input:focus {
 
 }
 
-#total::before {
-    content: 'Total:';
-
+small {
+    display: flex;
+    justify-content: space-between;
 }
+
+/* #total::before {
+    content: 'Total:';
+} */
 
 button {
     width: 100%;
@@ -151,7 +167,7 @@ table {
     }
 }
 
-@media (max-width: 792px) {
+@media (max-width: 1152px) {
     table {
         display: none;
     }
