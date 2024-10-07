@@ -33,6 +33,28 @@ body {
 
 }
 
+@media (max-width: 520px) {
+    .crud {
+        width: 70%;
+        padding: 80px 60px;
+    }
+}
+
+@media (max-width: 447px) {
+    .crud {
+        width: 90%;
+        padding: 100px 30px;
+        box-sizing: border-box;
+    }
+
+    .crud button {
+        margin-left: -5px;
+        width: fit-content !important;
+    }
+
+
+}
+
 /* header */
 .head {
     text-align: center;
